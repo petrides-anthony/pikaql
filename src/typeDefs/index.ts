@@ -1,6 +1,6 @@
 import { query } from './query';
-import { postType, userType, addressType, companyType, geoLocationType } from './types';
+import { postType, userType, addressType, companyType, geoLocationType, gameType } from './types';
 
-const typeDefs = [query, postType, userType, addressType, companyType, geoLocationType];
+const typeDefs = [query, postType, userType, addressType, companyType, geoLocationType, gameType];
 
 export { typeDefs };

@@ -1,23 +1,22 @@
 import axios, { AxiosResponse } from 'axios';
+import { Game } from '../typeDefs/types';
 
-const gameEndpoint = 'https://api.igdb.com/v4/games/?search=zelda&fields=id,name';
 const access_token = 'Bearer g4w6duip0imczb8600p7x7s3lcp1im';
 const client_id = 'gpss28az530yefemhe3otsr5k2q56p';
 
-async function getGames() {
+const game_title = 'zelda'
+const game_endpoint = `https://api.igdb.com/v4/games/?search=${game_title}&fields=id,name`;
 
-  const res = await axios.get<any, AxiosResponse<any[]>>(`${gameEndpoint}`, {
+async function getGames(): Promise<Game[]> {
+
+  const res = await axios.get<any, AxiosResponse<Game[]>>(`${game_endpoint}`, {
     headers: {
       'Client-ID': `${client_id }`,
       'Authorization': `${access_token}`
     }
-  })
-  .then((res) => {
-    console.log(res.data)
-  })
-  .catch((error) => {
-    console.error(error)
   });
+  
+  return res.data;
 }
 
-getGames();
+export default getGames;

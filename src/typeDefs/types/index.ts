@@ -3,6 +3,7 @@ import { userType, User } from './userType';
 import { addressType, Address } from './addressType';
 import { companyType, Company } from './companyType';
 import { geoLocationType, GeoLocation } from './geoLocationType';
+import { gameType, Game } from './gameType';
 
 export {
   postType,
@@ -14,5 +15,7 @@ export {
   companyType,
   Company,
   geoLocationType,
-  GeoLocation
+  GeoLocation,
+  gameType,
+  Game,
 };
