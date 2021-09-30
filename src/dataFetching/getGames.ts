@@ -4,10 +4,10 @@ import { Game } from '../typeDefs/types';
 const access_token = 'Bearer g4w6duip0imczb8600p7x7s3lcp1im';
 const client_id = 'gpss28az530yefemhe3otsr5k2q56p';
 
-const game_title = 'zelda'
-const game_endpoint = `https://api.igdb.com/v4/games/?search=${game_title}&fields=id,name`;
+async function getGames(gameTitle: string = 'mario' ): Promise<Game[]> {
 
-async function getGames(): Promise<Game[]> {
+  // const game_title = 'zelda'
+  const game_endpoint = `https://api.igdb.com/v4/games/?search=${gameTitle}&fields=id,name`;
 
   const res = await axios.get<any, AxiosResponse<Game[]>>(`${game_endpoint}`, {
     headers: {

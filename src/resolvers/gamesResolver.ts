@@ -3,8 +3,8 @@ import getGames from '../dataFetching/getGames';
 const gamesResolver = {
   Query: {
     games: (root: any, args: any, context: any) => {
-      console.log('Games queried');
-      return getGames();
+      console.log('GamesResolver queried');
+      return getGames(args.gameTitle);
     },
   }
 };
@@ -15,13 +15,16 @@ export { gamesResolver };
 Try querying
 ```
 # Write your query or mutation here
-query Games {
-  games {
-    userId
+query ExampleQuery($gameTitle: String!) {
+  games(gameTitle: $gameTitle) {
     id
-    title
-    body
+    name
   }
-} 
+}
+
+# Variables
+{
+  "gameTitle": "zelda"
+}
 ```
 */
