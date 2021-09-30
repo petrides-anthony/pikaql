@@ -13,6 +13,9 @@ query ExampleQuery($gameTitle: String!) {
   games(gameTitle: $gameTitle) {
     id
     name
+    rating
+    summary
+    storyline
   }
 }
 
@@ -25,6 +28,7 @@ query ExampleQuery($gameTitle: String!) {
 
 #### Resources
 ```
+- Game Endpoint: https://api-docs.igdb.com/#game
 - https://dev.twitch.tv/console/apps/gpss28az530yefemhe3otsr5k2q56p
 - https://api-docs.igdb.com/#about
 - https://grantwinney.com/what-is-igdb-api-internet-game-database/ 
